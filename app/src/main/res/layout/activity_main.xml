@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              xmlns:cnfet="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:paddingLeft="@dimen/activity_horizontal_margin"
+              android:paddingRight="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/activity_vertical_margin"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/activity_vertical_margin"
+              tools:context=".MainActivity">
+
+    <me.pc.edittext.numformat.library.CardNumFormatEditText
+        cnfet:placeholder="pound"
+        android:inputType="number"
+        android:id="@+id/cardnumformatedittext"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:hint="CNFET splitted by pounds"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <me.pc.edittext.numformat.library.CardNumFormatEditText
+        cnfet:placeholder="hyphen"
+        android:inputType="number"
+        android:id="@+id/cardnumformatedittext2"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:hint="CNFET splitted by hyphen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:maxLength="23"
+        android:inputType="number"
+        android:id="@+id/edittext"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:hint="EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
