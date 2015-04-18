@@ -1,5 +1,5 @@
 # CardNumFormatEditText
-Splitted a band card numer or credit card numbers by whitespace/pound/hyphen every 4 digitals
+Splitted a band card numer or a credit card number by whitespace/pound/hyphen every 4 digitals
 
 Credits
 -------
