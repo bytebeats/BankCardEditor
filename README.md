@@ -1,6 +1,8 @@
 # CardNumFormatEditText
 Splitted a band card numer or a credit card number by whitespace/pound/hyphen every 4 digitals
 
+这是针对常见的输入银行卡号并对卡号自动分割部分工程。分割符可以量'#','-'或者空格。它比平时见的优点就是在光标处于分隔符之前时按返回键，可以让光标自动跳过分隔符。
+
 Credits
 -------
 
