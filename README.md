@@ -3,23 +3,46 @@ Splitted a band card numer or a credit card number by whitespace/pound/hyphen ev
 
 这是针对常见的输入银行卡号并对卡号自动分割部分工程。分割符可以量'#','-'或者空格。它比平时见的优点就是在光标处于分隔符之前时按返回键，可以让光标自动跳过分隔符。
 
-Credits
+Effect Graph
 -------
 
-License
+<img src="/media/bank_card_format.gif" width="360" height="720"/>
+
+How to use
 -------
+<br>in xml files:
+```
+        <me.bytebeats.views.bankcard.FormatEditText
+            android:paddingStart="10dp"
+            app:splitter="pound"
+            android:inputType="number"
+            android:id="@+id/format_edit_text"
+            android:hint="splitted by pounds"
+            android:gravity="start|center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
 
-    Copyright 2014 Peter Pan
+```
+<br>in Kotlin:
+```
+        formatEditText.onVerifyBankCardListener = object : FormatEditText.OnVerifyBankCardListener {
+            override fun onVerified(cardBank: String?, cardType: String?) {
+                bankName1.text = cardBank ?: UNKNOWN
+                cardType1.text = cardType ?: UNKNOWN
+            }
+        }
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+        verify.setOnClickListener {
+            formatEditText2.verify(object : FormatEditText.OnVerifyResultListener {
+                override fun onSuccess(cardBank: String?, cardType: String?) {
+                    bankName2.text = cardBank
+                    cardType2.text = cardType
+                }
 
-       http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-    
+                override fun onFailure() {
+                    bankName2.text = UNKNOWN
+                    cardType2.text = UNKNOWN
+                }
+            })
+        }
+```

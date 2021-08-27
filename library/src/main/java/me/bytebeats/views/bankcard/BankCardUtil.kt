@@ -11,7 +11,7 @@ fun bankCardVerifyCode(unverifiedBankCard: String?): Char {
     if (unverifiedBankCard.isNullOrEmpty() || unverifiedBankCard.length !in 16..19
         || !unverifiedBankCard.matches(Regex("\\d+"))) return 'N'
     val chs = unverifiedBankCard.toCharArray()
-    var luhm = 0
+    var luhnCheckSum = 0
     var i = chs.lastIndex
     var j = 0
     while (i >= 0) {
@@ -20,10 +20,10 @@ fun bankCardVerifyCode(unverifiedBankCard: String?): Char {
             k *= 2
             k = k / 10 + k % 10
         }
-        luhm += k
+        luhnCheckSum += k
         i--
         j++
     }
-    return if (luhm % 10 == 0) '0' else '0' + (10 - luhm % 10)
+    return if (luhnCheckSum % 10 == 0) '0' else '0' + (10 - luhnCheckSum % 10)
 }
 
