@@ -18,7 +18,7 @@ package me.pc.edittext.numformat.library;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.widget.EditText;
+import androidx.appcompat.widget.AppCompatEditText;
 
 /**
  * @author SilentKnight || happychinapc[at]gmail[dot]com
@@ -30,7 +30,7 @@ import android.widget.EditText;
  * @FIX ME IF ANYTHING INAPPRICIATE
  */
 
-public class CardNumFormatEditText extends EditText {
+public class CardNumFormatEditText extends AppCompatEditText {
     private CardNumFormatTextWatcher mTextWatcher;
 
     public CardNumFormatEditText(Context context) {

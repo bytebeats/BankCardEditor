@@ -6,8 +6,6 @@ Splitted a band card numer or a credit card number by whitespace/pound/hyphen ev
 Credits
 -------
 
-Author: Peter Pan
-
 License
 -------
 
