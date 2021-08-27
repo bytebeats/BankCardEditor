@@ -26,8 +26,15 @@ class FormatEditText : AppCompatEditText {
         mTextWatcher.splitter = Splitter.values()[splitterIdx]
         typedArray.recycle()
         addTextChangedListener(mTextWatcher)
+        isFocusable = true
+        isEnabled = true
+        isFocusableInTouchMode = true
     }
 
     val splitter: Splitter
         get() = mTextWatcher.splitter
+
+    fun trimmedBankCardNo(): String? {
+        return text?.replace(Regex(splitter.splitter.toString()), "")
+    }
 }
