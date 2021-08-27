@@ -1,18 +1,18 @@
 package me.pc.edittext.numformat.library;
 /**
  * Copyright 2014 Peter Pan
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License.   
+ * limitations under the License.
  */
 
 import android.text.Editable;
@@ -35,14 +35,14 @@ public class CardNumFormatTextWatcher implements TextWatcher {
     public static final int LIMIT_OF_INPUT_LENGTH = 23;
     //set anything you want, ' ', '-'...
     private char placeHolder = PLACEHOLDER.WHITESPACE.getPlaceHolder();
-    private EditText mEditText;
+    private final EditText mEditText;
     int prevTextLength = 0;
     int curTextLength = 0;
     boolean isChanged = false;
 
     int cursor = 0;// cursor's location;
     private char[] tmpCharArray;
-    private StringBuffer buffer = new StringBuffer();
+    private final StringBuffer buffer = new StringBuffer();
     int placeHolderCount = 0;
 
     public CardNumFormatTextWatcher(EditText editText) {
@@ -127,11 +127,11 @@ public class CardNumFormatTextWatcher implements TextWatcher {
         }
     }
 
-    public static enum PLACEHOLDER {
+    public enum PLACEHOLDER {
         WHITESPACE(' '), POUND('#'), HYPHEN('-');
         private char placeHolder;
 
-        private PLACEHOLDER(char placeHolder) {
+        PLACEHOLDER(char placeHolder) {
             this.placeHolder = placeHolder;
         }
 
