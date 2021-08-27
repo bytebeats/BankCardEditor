@@ -15,13 +15,13 @@ class FormatEditText : AppCompatEditText {
     constructor(context: Context) : this(context, null)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
-        init(attrs)
+        init(attrs, defStyleAttr)
     }
 
     private val mTextWatcher by lazy { FormatTextWatcher(this) }
 
-    private fun init(attrs: AttributeSet?) {
-        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.FormatEditText)
+    private fun init(attrs: AttributeSet?, defStyleAttr: Int) {
+        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.FormatEditText, defStyleAttr, 0)
         val splitterIdx = typedArray.getInt(R.styleable.FormatEditText_splitter, 0)
         mTextWatcher.splitter = Splitter.values()[splitterIdx]
         typedArray.recycle()
