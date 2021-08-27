@@ -14,25 +14,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a4ca2f0-4b78-4605-aa57-c78ffb2a5a4e" name="Changes" comment="FormatEditText works like charming.">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/me/bytebeats/views/bankcard/app/MainActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/BankCardInfo.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/BankCardUtil.kt" afterDir="false" />
+    <list default="true" id="0a4ca2f0-4b78-4605-aa57-c78ffb2a5a4e" name="Changes" comment="check opening bank and card type.">
+      <change afterPath="$PROJECT_DIR$/media/bank_card_format.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/me/bytebeats/views/bankcard/app/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/me/bytebeats/views/bankcard/app/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/me/bytebeats/views/bankcard/app/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-w820dp/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-w820dp/dimens.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/FormatEditText.kt" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/FormatEditText.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/FormatTextWatcher.kt" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/FormatTextWatcher.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/BankCardUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/BankCardUtil.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@NAB0220416028317]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@/Users/tiger/.android/avd/Pixel_4a_API_30.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -66,7 +61,7 @@
     <property name="android-custom-view/Users/tiger/Development/Workspace/IntelliJIDEA/CardNumFormatEditText/library/src/main/java/me/pc/edittext/numformat/library/CardNumFormatEditText.java_SELECTED" value="CardNumFormatEditText" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/media" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -176,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630063335301</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="check opening bank and card type.">
+      <created>1630069868851</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1630069868851</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -196,6 +198,7 @@
     <MESSAGE value="refactor." />
     <MESSAGE value="text." />
     <MESSAGE value="FormatEditText works like charming." />
-    <option name="LAST_COMMIT_MESSAGE" value="FormatEditText works like charming." />
+    <MESSAGE value="check opening bank and card type." />
+    <option name="LAST_COMMIT_MESSAGE" value="check opening bank and card type." />
   </component>
 </project>
