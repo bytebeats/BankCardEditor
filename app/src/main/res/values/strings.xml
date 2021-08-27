@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FormatCardNumEditText</string>
+    <string name="app_name">BackCardEditor</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
