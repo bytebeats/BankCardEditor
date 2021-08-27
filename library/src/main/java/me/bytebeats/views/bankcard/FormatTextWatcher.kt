@@ -1,19 +1,19 @@
 package me.bytebeats.views.bankcard
 
-import android.widget.EditText
 import android.text.TextWatcher
 import java.lang.StringBuffer
 import android.text.Editable
 import android.text.Selection
 import android.text.InputFilter
 import android.text.InputFilter.LengthFilter
+import android.util.Log
 
 /**
  * @author bytebeats || happychinapc[at]gmail[dot]com
  * @date 2015/3/25
  * @time 16:36
  */
-class FormatTextWatcher(private val mEditText: EditText) : TextWatcher {
+class FormatTextWatcher(private val mEditor: FormatEditText) : TextWatcher {
     //set anything you want, ' ', '-'...
     var splitter = Splitter.WHITESPACE
     private var prevTextLength = 0
@@ -23,10 +23,12 @@ class FormatTextWatcher(private val mEditText: EditText) : TextWatcher {
     private var tmpCharArray: CharArray? = null
     private val buffer = StringBuffer()
     private var splitterCounter = 0
+    private val onBankCardVerifyListener
+        get() = mEditor.onVerifyBankCardListener
 
 
     init {
-        mEditText.filters = arrayOf<InputFilter>(LengthFilter(LIMIT_OF_INPUT_LENGTH))
+        mEditor.filters = arrayOf<InputFilter>(LengthFilter(LIMIT_OF_INPUT_LENGTH))
     }
 
     override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
@@ -54,7 +56,7 @@ class FormatTextWatcher(private val mEditText: EditText) : TextWatcher {
 
     override fun afterTextChanged(s: Editable) {
         if (isChanged) {
-            cursor = mEditText.selectionEnd
+            cursor = mEditor.selectionEnd
             var index = 0
             while (index < buffer.length) {
                 if (buffer[index] == splitter.splitter) {
@@ -64,16 +66,16 @@ class FormatTextWatcher(private val mEditText: EditText) : TextWatcher {
                 }
             }
             index = 0
-            var tmpPlaceHolderCount = 0
+            var tmpSplitterCounter = 0
             while (index < buffer.length) {
                 if (index == 4 || index == 9 || index == 14 || index == 19) {
                     buffer.insert(index, splitter.splitter)
-                    tmpPlaceHolderCount++
+                    tmpSplitterCounter++
                 }
                 index++
             }
-            if (tmpPlaceHolderCount > splitterCounter) {
-                cursor += tmpPlaceHolderCount - splitterCounter
+            if (tmpSplitterCounter > splitterCounter) {
+                cursor += tmpSplitterCounter - splitterCounter
             }
             tmpCharArray = CharArray(buffer.length)
             buffer.getChars(0, buffer.length, tmpCharArray, 0)
@@ -83,14 +85,24 @@ class FormatTextWatcher(private val mEditText: EditText) : TextWatcher {
             } else if (cursor < 0) {
                 cursor = 0
             }
-            mEditText.setText(str)
-            val editable = mEditText.text
+            mEditor.setText(str)
+            val editable = mEditor.text
             Selection.setSelection(editable, cursor)
             isChanged = false
+            val trimmedBankCardNo = mEditor.trimmedBankCardNo()
+            if (onBankCardVerifyListener != null && verifyBankCard(trimmedBankCardNo)) {
+                Log.i(TAG, "verified")
+                val bankCardInfo = BankCardInfo(trimmedBankCardNo!!)
+                onBankCardVerifyListener?.onVerified(bankCardInfo.cardBank, bankCardInfo.cardType)
+            } else {
+                Log.i(TAG, "unverified")
+                onBankCardVerifyListener?.onVerified(null, null)
+            }
         }
     }
 
     companion object {
         private const val LIMIT_OF_INPUT_LENGTH = 23
+        private const val TAG = "FormatTextWatcher"
     }
 }
