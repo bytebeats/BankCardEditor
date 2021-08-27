@@ -3,7 +3,6 @@ package me.bytebeats.views.bankcard
 import androidx.appcompat.widget.AppCompatEditText
 import android.content.Context
 import android.util.AttributeSet
-import android.widget.EditText
 
 /**
  * @author bytebeats || happychinapc[at]gmail[dot]com
@@ -17,6 +16,8 @@ class FormatEditText : AppCompatEditText {
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
         init(attrs, defStyleAttr)
     }
+
+    var onVerifyBankCardListener: OnVerifyBankCardListener? = null
 
     private val mTextWatcher by lazy { FormatTextWatcher(this) }
 
@@ -36,5 +37,25 @@ class FormatEditText : AppCompatEditText {
 
     fun trimmedBankCardNo(): String? {
         return text?.replace(Regex(splitter.splitter.toString()), "")
+    }
+
+    fun verify(onVerifyResultListener: OnVerifyResultListener?) {
+        trimmedBankCardNo()?.let {
+            if (verifyBankCard(it)) {
+                val bankCardInfo = BankCardInfo(it)
+                onVerifyResultListener?.onSuccess(bankCardInfo.cardBank, bankCardInfo.cardType)
+            } else {
+                onVerifyResultListener?.onFailure()
+            }
+        }
+    }
+
+    interface OnVerifyBankCardListener {
+        fun onVerified(cardBank: String?, cardType: String?)
+    }
+
+    interface OnVerifyResultListener {
+        fun onSuccess(cardBank: String?, cardType: String?)
+        fun onFailure()
     }
 }
