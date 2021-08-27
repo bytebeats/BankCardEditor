@@ -1,6 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:cnfet="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -8,27 +8,29 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+    tools:context="me.bytebeats.views.bankcard.app.MainActivity">
 
-    <me.pc.edittext.numformat.library.CardNumFormatEditText
-        cnfet:placeholder="pound"
+    <me.bytebeats.views.bankcard.FormatEditText
+        app:splitter="pound"
         android:inputType="number"
-        android:id="@+id/cardnumformatedittext"
+        android:id="@+id/format_edit_text"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:hint="CNFET splitted by pounds"
+        android:hint="splitted by pounds"
+        android:gravity="start|center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="50dp" />
 
-    <me.pc.edittext.numformat.library.CardNumFormatEditText
-        cnfet:placeholder="hyphen"
+    <me.bytebeats.views.bankcard.FormatEditText
+        app:splitter="hyphen"
         android:inputType="number"
-        android:id="@+id/cardnumformatedittext2"
+        android:gravity="start|center_vertical"
+        android:id="@+id/format_edit_text_2"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:hint="CNFET splitted by hyphen"
+        android:hint="splitted by hyphen"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="50dp" />
 
     <EditText
         android:maxLength="23"
@@ -37,7 +39,8 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:hint="EditText"
+        android:gravity="start|center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="50dp" />
 
 </LinearLayout>
