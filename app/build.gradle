@@ -8,7 +8,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "me.bytebeats.recycler"
+        applicationId "me.bytebeats.views.bankcard.app"
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
