@@ -92,8 +92,7 @@ class BankCardTextWatcher(private val mEditor: EditText, var splitter: Splitter 
                 trimmedBankCardNo(mEditor, splitter)
             }
             if (onBankCardVerifyListener != null && verifyBankCard(trimmedBankCardNo)) {
-                val bankCardInfo = BankCardInfo(trimmedBankCardNo!!)
-                onBankCardVerifyListener?.onSuccess(bankCardInfo.cardBank, bankCardInfo.cardType)
+                onBankCardVerifyListener?.onSuccess(BankCardInfo(trimmedBankCardNo!!))
             } else {
                 onBankCardVerifyListener?.onFailure()
             }

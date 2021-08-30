@@ -18,8 +18,399 @@ class BankCardInfo(private val cardNo: String) {
 
     val cardType: String
         get() = getCardType(cardNo)
+    val bankId: String
+        get() = getBankId(cardNo)
 
     companion object {
+
+        /**
+         * 获取银行编码
+         *
+         * @return
+         */
+        fun getBankId(bankNo: String): String {
+            if (Pattern.matches(s1, bankNo) || Pattern.matches(s2, bankNo) || Pattern.matches(
+                    s3,
+                    bankNo
+                )) {
+                return "100"
+            } else if (Pattern.matches(s4, bankNo) || Pattern.matches(s5, bankNo) || Pattern.matches(
+                    s6,
+                    bankNo
+                ) || Pattern.matches(s7, bankNo) || Pattern.matches(s8, bankNo) || Pattern.matches(
+                    s9,
+                    bankNo
+                ) || Pattern.matches(s10, bankNo) || Pattern.matches(s11, bankNo) || Pattern.matches(
+                    s12,
+                    bankNo
+                ) || Pattern.matches(s13, bankNo)) {
+                return "102"
+            } else if (Pattern.matches(s14, bankNo) || Pattern.matches(
+                    s15,
+                    bankNo
+                ) || Pattern.matches(s16, bankNo) || Pattern.matches(s17, bankNo) || Pattern.matches(
+                    s18,
+                    bankNo
+                )) {
+                return "103"
+            } else if (Pattern.matches(s19, bankNo) || Pattern.matches(
+                    s20,
+                    bankNo
+                ) || Pattern.matches(s21, bankNo) || Pattern.matches(s22, bankNo) || Pattern.matches(
+                    s23,
+                    bankNo
+                ) || Pattern.matches(s24, bankNo) || Pattern.matches(s25, bankNo)) {
+                return "104"
+            } else if (Pattern.matches(s26, bankNo) || Pattern.matches(
+                    s27,
+                    bankNo
+                ) || Pattern.matches(s28, bankNo) || Pattern.matches(s29, bankNo) || Pattern.matches(
+                    s30,
+                    bankNo
+                ) || Pattern.matches(s31, bankNo) || Pattern.matches(s32, bankNo) || Pattern.matches(
+                    s33,
+                    bankNo
+                )) {
+                return "105"
+            } else if (Pattern.matches(s34, bankNo) || Pattern.matches(
+                    s35,
+                    bankNo
+                ) || Pattern.matches(s36, bankNo) || Pattern.matches(s37, bankNo) || Pattern.matches(
+                    s38,
+                    bankNo
+                ) || Pattern.matches(s39, bankNo) || Pattern.matches(s40, bankNo)) {
+                return "301"
+            } else if (Pattern.matches(s41, bankNo) || Pattern.matches(
+                    s42,
+                    bankNo
+                ) || Pattern.matches(s43, bankNo) || Pattern.matches(s44, bankNo) || Pattern.matches(
+                    s45,
+                    bankNo
+                ) || Pattern.matches(s46, bankNo)) {
+                return "308"
+            } else if (Pattern.matches(s47, bankNo) || Pattern.matches(
+                    s48,
+                    bankNo
+                ) || Pattern.matches(s49, bankNo)) {
+                return "305"
+            } else if (Pattern.matches(s50, bankNo) || Pattern.matches(
+                    s51,
+                    bankNo
+                ) || Pattern.matches(s52, bankNo) || Pattern.matches(s53, bankNo) || Pattern.matches(
+                    s54,
+                    bankNo
+                )) {
+                return "303"
+            } else if (Pattern.matches(s55, bankNo) || Pattern.matches(
+                    s56,
+                    bankNo
+                ) || Pattern.matches(s57, bankNo) || Pattern.matches(s58, bankNo)) {
+                return "302"
+            } else if (Pattern.matches(s59, bankNo) || Pattern.matches(s60, bankNo)) {
+                return "304"
+            } else if (Pattern.matches(s61, bankNo) || Pattern.matches(
+                    s62,
+                    bankNo
+                ) || Pattern.matches(s63, bankNo) || Pattern.matches(s64, bankNo)) {
+                return "307"
+            } else if (Pattern.matches(s65, bankNo) || Pattern.matches(
+                    s66,
+                    bankNo
+                ) || Pattern.matches(s67, bankNo) || Pattern.matches(s68, bankNo) || Pattern.matches(
+                    s69,
+                    bankNo
+                )) {
+                return "309"
+            } else if (Pattern.matches(s70, bankNo) || Pattern.matches(
+                    s71,
+                    bankNo
+                ) || Pattern.matches(s72, bankNo)) {
+                return "401"
+            } else if (Pattern.matches(s73, bankNo) || Pattern.matches(
+                    s74,
+                    bankNo
+                ) || Pattern.matches(s75, bankNo) || Pattern.matches(s76, bankNo) || Pattern.matches(
+                    s77,
+                    bankNo
+                )) {
+                return "310"
+            } else if (Pattern.matches(s79, bankNo) || Pattern.matches(
+                    s80,
+                    bankNo
+                ) || Pattern.matches(s81, bankNo) || Pattern.matches(s82, bankNo)) {
+                return "306"
+            } else if (Pattern.matches(s83, bankNo)) {
+                return "317"
+            } else if (Pattern.matches(s84, bankNo)) {
+                return "413"
+            } else if (Pattern.matches(s85, bankNo) || Pattern.matches(s86, bankNo)) {
+                return "426"
+            } else if (Pattern.matches(s87, bankNo) || Pattern.matches(s88, bankNo)) {
+                return "412"
+            } else if (Pattern.matches(s89, bankNo) || Pattern.matches(
+                    s90,
+                    bankNo
+                ) || Pattern.matches(s91, bankNo)) {
+                return "440"
+            } else if (Pattern.matches(s92, bankNo) || Pattern.matches(
+                    s93,
+                    bankNo
+                ) || Pattern.matches(s94, bankNo)) {
+                return "1501"
+            } else if (Pattern.matches(s95, bankNo) || Pattern.matches(s96, bankNo)) {
+                return "424"
+            } else if (Pattern.matches(s97, bankNo) || Pattern.matches(
+                    s98,
+                    bankNo
+                ) || Pattern.matches(s99, bankNo)) {
+                return "408"
+            } else if (Pattern.matches(s100, bankNo) || Pattern.matches(s101, bankNo)) {
+                return "403"
+            } else if (Pattern.matches(s102, bankNo) || Pattern.matches(s103, bankNo)) {
+                return "1418"
+            } else if (Pattern.matches(s104, bankNo) || Pattern.matches(s105, bankNo) || Pattern.matches(
+                    s106,
+                    bankNo
+                ) || Pattern.matches(s107, bankNo)) {
+                return "3000"
+            } else if (Pattern.matches(s108, bankNo) || Pattern.matches(s109, bankNo)) {
+                return "3034"
+            } else if (Pattern.matches(s110, bankNo) || Pattern.matches(s111, bankNo)) {
+                return "3010"
+            } else if (Pattern.matches(s112, bankNo) || Pattern.matches(s113, bankNo) || Pattern.matches(
+                    s114,
+                    bankNo
+                )) {
+                return "3001"
+            } else if (Pattern.matches(s115, bankNo)) {
+                return "1554"
+            } else if (Pattern.matches(s116, bankNo)) {
+                return "1404"
+            } else if (Pattern.matches(s117, bankNo)) {
+                return "1405"
+            } else if (Pattern.matches(s118, bankNo) || Pattern.matches(s119, bankNo)) {
+                return "1415"
+            } else if (Pattern.matches(s133, bankNo) || Pattern.matches(s134, bankNo)) {
+                return "311"
+            } else if (Pattern.matches(s138, bankNo) || Pattern.matches(s139, bankNo)) {
+                return "316"
+            } else if (Pattern.matches(s140, bankNo) || Pattern.matches(s141, bankNo) || Pattern.matches(
+                    s142,
+                    bankNo
+                ) || Pattern.matches(s143, bankNo)) {
+                return "3002"
+            } else if (Pattern.matches(s144, bankNo) || Pattern.matches(s145, bankNo) || Pattern.matches(
+                    s146,
+                    bankNo
+                )) {
+                return "402"
+            } else if (Pattern.matches(s147, bankNo) || Pattern.matches(s148, bankNo) || Pattern.matches(
+                    s149,
+                    bankNo
+                )) {
+                return "405"
+            } else if (Pattern.matches(s150, bankNo) || Pattern.matches(s151, bankNo) || Pattern.matches(
+                    s152,
+                    bankNo
+                )) {
+                return "451"
+            } else if (Pattern.matches(s153, bankNo) || Pattern.matches(s154, bankNo)) {
+                return "414"
+            } else if (Pattern.matches(s155, bankNo) || Pattern.matches(s156, bankNo) || Pattern.matches(
+                    s157,
+                    bankNo
+                ) || Pattern.matches(s158, bankNo)) {
+                return "417"
+            } else if (Pattern.matches(s159, bankNo) || Pattern.matches(s160, bankNo) || Pattern.matches(
+                    s161,
+                    bankNo
+                )) {
+                return "420"
+            } else if (Pattern.matches(s162, bankNo) || Pattern.matches(s163, bankNo)) {
+                return "422"
+            } else if (Pattern.matches(s164, bankNo) || Pattern.matches(s165, bankNo)) {
+                return "427"
+            } else if (Pattern.matches(s166, bankNo) || Pattern.matches(s167, bankNo) || Pattern.matches(
+                    s168,
+                    bankNo
+                )) {
+                return "428"
+            } else if (Pattern.matches(s169, bankNo)) {
+                return "1528"
+            } else if (Pattern.matches(s170, bankNo) || Pattern.matches(s171, bankNo) || Pattern.matches(
+                    s172,
+                    bankNo
+                )) {
+                return "430"
+            } else if (Pattern.matches(s173, bankNo) || Pattern.matches(s174, bankNo) || Pattern.matches(
+                    s175,
+                    bankNo
+                )) {
+                return "435"
+            } else if (Pattern.matches(s176, bankNo) || Pattern.matches(s177, bankNo)) {
+                return "436"
+            } else if (Pattern.matches(s178, bankNo) || Pattern.matches(s179, bankNo)) {
+                return "441"
+            } else if (Pattern.matches(s180, bankNo) || Pattern.matches(s181, bankNo) || Pattern.matches(
+                    s182,
+                    bankNo
+                )) {
+                return "442"
+            } else if (Pattern.matches(s183, bankNo) || Pattern.matches(s184, bankNo)) {
+                return "447"
+            } else if (Pattern.matches(s185, bankNo) || Pattern.matches(s186, bankNo)) {
+                return "450"
+            } else if (Pattern.matches(s187, bankNo) || Pattern.matches(s188, bankNo)) {
+                return "457"
+            } else if (Pattern.matches(s189, bankNo) || Pattern.matches(s190, bankNo) || Pattern.matches(
+                    s191,
+                    bankNo
+                )) {
+                return "458"
+            } else if (Pattern.matches(s192, bankNo) || Pattern.matches(s193, bankNo) || Pattern.matches(
+                    s194,
+                    bankNo
+                ) || Pattern.matches(s195, bankNo) || Pattern.matches(s196, bankNo)) {
+                return "459"
+            } else if (Pattern.matches(s197, bankNo) || Pattern.matches(s198, bankNo) || Pattern.matches(
+                    s199,
+                    bankNo
+                ) || Pattern.matches(s200, bankNo)) {
+                return "461"
+            } else if (Pattern.matches(s201, bankNo) || Pattern.matches(s202, bankNo) || Pattern.matches(
+                    s203,
+                    bankNo
+                ) || Pattern.matches(s204, bankNo)) {
+                return "464"
+            } else if (Pattern.matches(s205, bankNo) || Pattern.matches(s206, bankNo) || Pattern.matches(
+                    s207,
+                    bankNo
+                )) {
+                return "479"
+            } else if (Pattern.matches(s208, bankNo) || Pattern.matches(s209, bankNo) || Pattern.matches(
+                    s210,
+                    bankNo
+                ) || Pattern.matches(s211, bankNo)) {
+                return "1518"
+            } else if (Pattern.matches(s212, bankNo) || Pattern.matches(s213, bankNo) || Pattern.matches(
+                    s214,
+                    bankNo
+                )) {
+                return "1401"
+            } else if (Pattern.matches(s215, bankNo) || Pattern.matches(s216, bankNo)) {
+                return "473"
+            } else if (Pattern.matches(s217, bankNo) || Pattern.matches(s218, bankNo)) {
+                return "474"
+            } else if (Pattern.matches(s219, bankNo) || Pattern.matches(s220, bankNo)) {
+                return "478"
+            } else if (Pattern.matches(s221, bankNo) || Pattern.matches(s222, bankNo) || Pattern.matches(
+                    s223,
+                    bankNo
+                )) {
+                return "491"
+            } else if (Pattern.matches(s224, bankNo) || Pattern.matches(s225, bankNo) || Pattern.matches(
+                    s226,
+                    bankNo
+                ) || Pattern.matches(s227, bankNo) || Pattern.matches(s228, bankNo)) {
+                return "1518"
+            } else if (Pattern.matches(s229, bankNo) || Pattern.matches(s230, bankNo)) {
+                return "1528"
+            } else if (Pattern.matches(s231, bankNo) || Pattern.matches(s232, bankNo)) {
+                return "1417"
+            } else if (Pattern.matches(s235, bankNo) || Pattern.matches(s236, bankNo)) {
+                return "1424"
+            } else if (Pattern.matches(s237, bankNo)) {
+                return "1438"
+            } else if (Pattern.matches(s238, bankNo) || Pattern.matches(s239, bankNo)) {
+                return "1439"
+            } else if (Pattern.matches(s240, bankNo) || Pattern.matches(s241, bankNo)) {
+                return "1515"
+            } else if (Pattern.matches(s242, bankNo) || Pattern.matches(s243, bankNo)) {
+                return "313"
+            } else if (Pattern.matches(s244, bankNo)) {
+                return "1532"
+            } else if (Pattern.matches(s246, bankNo)) {
+                return "1438"
+            } else if (Pattern.matches(s247, bankNo)) {
+                return "1503"
+            } else if (Pattern.matches(s248, bankNo)) {
+                return "1434"
+            } else if (Pattern.matches(s251, bankNo) || Pattern.matches(s252, bankNo)) {
+                return "1508"
+            } else if (Pattern.matches(s253, bankNo) || Pattern.matches(s254, bankNo)) {
+                return "1512"
+            } else if (Pattern.matches(ss254, bankNo)) {
+                return "1504"
+            } else if (Pattern.matches(s255, bankNo)) {
+                return "1523"
+            } else if (Pattern.matches(s257, bankNo) || Pattern.matches(s258, bankNo) || Pattern.matches(
+                    s256,
+                    bankNo
+                )) {
+                return "495"
+            } else if (Pattern.matches(s259, bankNo) || Pattern.matches(s260, bankNo)) {
+                return "481"
+            } else if (Pattern.matches(s261, bankNo)) {
+                return "475"
+            } else if (Pattern.matches(s262, bankNo) || Pattern.matches(s263, bankNo)) {
+                return "462"
+            } else if (Pattern.matches(s264, bankNo) || Pattern.matches(s265, bankNo)) {
+                return "463"
+            } else if (Pattern.matches(s266, bankNo)) {
+                return "455"
+            } else if (Pattern.matches(s267, bankNo) || Pattern.matches(s268, bankNo) || Pattern.matches(
+                    s269,
+                    bankNo
+                )) {
+                return "448"
+            } else if (Pattern.matches(s270, bankNo) || Pattern.matches(s271, bankNo) || Pattern.matches(
+                    s272,
+                    bankNo
+                )) {
+                return "443"
+            } else if (Pattern.matches(s273, bankNo) || Pattern.matches(s274, bankNo)) {
+                return "439"
+            } else if (Pattern.matches(s275, bankNo) || Pattern.matches(s276, bankNo)) {
+                return "438"
+            } else if (Pattern.matches(s277, bankNo) || Pattern.matches(s278, bankNo)) {
+                return "437"
+            } else if (Pattern.matches(s279, bankNo)) {
+                return "433"
+            } else if (Pattern.matches(s282, bankNo) || Pattern.matches(s283, bankNo)) {
+                return "423"
+            } else if (Pattern.matches(s284, bankNo)) {
+                return "421"
+            } else if (Pattern.matches(s285, bankNo)) {
+                return "419"
+            } else if (Pattern.matches(s286, bankNo)) {
+                return "418"
+            } else if (Pattern.matches(s287, bankNo) || Pattern.matches(s288, bankNo)) {
+                return "411"
+            } else if (Pattern.matches(s290, bankNo)) {
+                return "3036"
+            } else if (Pattern.matches(s291, bankNo)) {
+                return "3026"
+            } else if (Pattern.matches(s292, bankNo)) {
+                return "3023"
+            } else if (Pattern.matches(s293, bankNo)) {
+                return "3025"
+            } else if (Pattern.matches(s294, bankNo) || Pattern.matches(s295, bankNo) || Pattern.matches(
+                    s296,
+                    bankNo
+                ) || Pattern.matches(s297, bankNo)) {
+                return "3003"
+            } else if (Pattern.matches(s299, bankNo)) {
+                return "404"
+            } else if (Pattern.matches(s300, bankNo) || Pattern.matches(s301, bankNo)) {
+                return "409"
+            } else if (Pattern.matches(s304, bankNo) || Pattern.matches(s305, bankNo) || Pattern.matches(
+                    s306,
+                    bankNo
+                ) || Pattern.matches(s307, bankNo)) {
+                return "3005"
+            }
+            return "Unknown"
+        }
 
         fun getCardType(bankNo: String): String {
             return if (Pattern.matches(s1, bankNo) || Pattern.matches(s2, bankNo) || Pattern.matches(
@@ -347,7 +738,7 @@ class BankCardInfo(private val cardNo: String) {
                 ) || Pattern.matches(s310, bankNo) || Pattern.matches(s311, bankNo)) {
                 "预付费卡"
             } else {
-                "未知"
+                "无法识别"
             }
         }
 

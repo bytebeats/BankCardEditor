@@ -10,6 +10,6 @@ package me.bytebeats.views.bankcard
  */
 
 interface OnVerifyBankCardListener {
-    fun onSuccess(cardBank: String?, cardType: String?)
+    fun onSuccess(bankCardInfo: BankCardInfo?)
     fun onFailure()
 }
