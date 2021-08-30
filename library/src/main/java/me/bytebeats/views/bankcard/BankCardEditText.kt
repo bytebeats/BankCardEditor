@@ -9,7 +9,7 @@ import android.util.AttributeSet
  * @date 2015/3/25
  * @time 16:58
  */
-class FormatEditText : AppCompatEditText {
+class BankCardEditText : AppCompatEditText {
 
     constructor(context: Context) : this(context, null)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
@@ -17,13 +17,17 @@ class FormatEditText : AppCompatEditText {
         init(attrs, defStyleAttr)
     }
 
-    var onVerifyBankCardListener: OnVerifyBankCardListener? = null
+    var onVerifyBankCardListener: OnVerifyBankCardListener?
+        get() = mTextWatcher.onBankCardVerifyListener
+        set(value) {
+            mTextWatcher.onBankCardVerifyListener = value
+        }
 
-    private val mTextWatcher by lazy { FormatTextWatcher(this) }
+    private val mTextWatcher by lazy { BankCardTextWatcher(this) }
 
     private fun init(attrs: AttributeSet?, defStyleAttr: Int) {
-        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.FormatEditText, defStyleAttr, 0)
-        val splitterIdx = typedArray.getInt(R.styleable.FormatEditText_splitter, 0)
+        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.BankCardEditText, defStyleAttr, 0)
+        val splitterIdx = typedArray.getInt(R.styleable.BankCardEditText_splitter, 0)
         mTextWatcher.splitter = Splitter.values()[splitterIdx]
         typedArray.recycle()
         addTextChangedListener(mTextWatcher)
@@ -35,27 +39,16 @@ class FormatEditText : AppCompatEditText {
     val splitter: Splitter
         get() = mTextWatcher.splitter
 
-    fun trimmedBankCardNo(): String? {
-        return text?.replace(Regex(splitter.splitter.toString()), "")
-    }
+    fun trimmedBankCardNo(): String? = BankCardTextWatcher.trimmedBankCardNo(this)
 
-    fun verify(onVerifyResultListener: OnVerifyResultListener?) {
+    fun verify(verifyBankCardListener: OnVerifyBankCardListener?) {
         trimmedBankCardNo()?.let {
             if (verifyBankCard(it)) {
                 val bankCardInfo = BankCardInfo(it)
-                onVerifyResultListener?.onSuccess(bankCardInfo.cardBank, bankCardInfo.cardType)
+                verifyBankCardListener?.onSuccess(bankCardInfo.cardBank, bankCardInfo.cardType)
             } else {
-                onVerifyResultListener?.onFailure()
+                verifyBankCardListener?.onFailure()
             }
         }
-    }
-
-    interface OnVerifyBankCardListener {
-        fun onVerified(cardBank: String?, cardType: String?)
-    }
-
-    interface OnVerifyResultListener {
-        fun onSuccess(cardBank: String?, cardType: String?)
-        fun onFailure()
     }
 }

@@ -4,11 +4,12 @@ import android.app.Activity
 import android.os.Bundle
 import android.text.Html
 import android.widget.TextView
-import me.bytebeats.views.bankcard.FormatEditText
+import me.bytebeats.views.bankcard.BankCardEditText
+import me.bytebeats.views.bankcard.OnVerifyBankCardListener
 
 class MainActivity : Activity() {
-    private val formatEditText by lazy { findViewById<FormatEditText>(R.id.format_edit_text) }
-    private val formatEditText2 by lazy { findViewById<FormatEditText>(R.id.format_edit_text_2) }
+    private val bankCardEditText by lazy { findViewById<BankCardEditText>(R.id.format_edit_text) }
+    private val bankCardEditText2 by lazy { findViewById<BankCardEditText>(R.id.format_edit_text_2) }
     private val bankName1 by lazy { findViewById<TextView>(R.id.bank_name_1) }
     private val bankName2 by lazy { findViewById<TextView>(R.id.bank_name_2) }
     private val cardType1 by lazy { findViewById<TextView>(R.id.card_type_1) }
@@ -19,15 +20,20 @@ class MainActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        formatEditText.onVerifyBankCardListener = object : FormatEditText.OnVerifyBankCardListener {
-            override fun onVerified(cardBank: String?, cardType: String?) {
-                bankName1.text = cardBank ?: UNKNOWN
-                cardType1.text = cardType ?: UNKNOWN
+        bankCardEditText.onVerifyBankCardListener = object : OnVerifyBankCardListener {
+            override fun onSuccess(cardBank: String?, cardType: String?) {
+                bankName1.text = cardBank
+                cardType1.text = cardType
+            }
+
+            override fun onFailure() {
+                bankName1.text = UNKNOWN
+                cardType1.text = UNKNOWN
             }
         }
 
         verify.setOnClickListener {
-            formatEditText2.verify(object : FormatEditText.OnVerifyResultListener {
+            bankCardEditText2.verify(object : OnVerifyBankCardListener {
                 override fun onSuccess(cardBank: String?, cardType: String?) {
                     bankName2.text = cardBank
                     cardType2.text = cardType

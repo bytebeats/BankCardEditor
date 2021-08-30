@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="FormatEditText">
+    <declare-styleable name="BankCardEditText">
         <attr name="splitter">
             <enum name="whitespace" value="0"/>
             <enum name="pound" value="1"/>
