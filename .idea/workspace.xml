@@ -15,12 +15,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a4ca2f0-4b78-4605-aa57-c78ffb2a5a4e" name="Changes" comment="refactor code.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/me/bytebeats/views/bankcard/app/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/me/bytebeats/views/bankcard/app/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/BankCardEditText.kt" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/BankCardEditText.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/BankCardInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/BankCardInfo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/BankCardTextWatcher.kt" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/BankCardTextWatcher.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/OnVerifyBankCardListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/OnVerifyBankCardListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630319349854</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="refactor code.">
+      <created>1630327885987</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1630327885987</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
