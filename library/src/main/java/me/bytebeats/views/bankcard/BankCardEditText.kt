@@ -44,8 +44,7 @@ class BankCardEditText : AppCompatEditText {
     fun verify(verifyBankCardListener: OnVerifyBankCardListener?) {
         trimmedBankCardNo()?.let {
             if (verifyBankCard(it)) {
-                val bankCardInfo = BankCardInfo(it)
-                verifyBankCardListener?.onSuccess(bankCardInfo.cardBank, bankCardInfo.cardType)
+                verifyBankCardListener?.onSuccess(BankCardInfo(it))
             } else {
                 verifyBankCardListener?.onFailure()
             }

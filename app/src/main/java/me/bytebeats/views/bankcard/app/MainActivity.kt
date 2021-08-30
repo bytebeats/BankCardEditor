@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.Html
 import android.widget.TextView
 import me.bytebeats.views.bankcard.BankCardEditText
+import me.bytebeats.views.bankcard.BankCardInfo
 import me.bytebeats.views.bankcard.OnVerifyBankCardListener
 
 class MainActivity : Activity() {
@@ -21,9 +22,9 @@ class MainActivity : Activity() {
         setContentView(R.layout.activity_main)
 
         bankCardEditText.onVerifyBankCardListener = object : OnVerifyBankCardListener {
-            override fun onSuccess(cardBank: String?, cardType: String?) {
-                bankName1.text = cardBank
-                cardType1.text = cardType
+            override fun onSuccess(bankCardInfo: BankCardInfo?) {
+                bankName1.text = bankCardInfo?.cardBank
+                cardType1.text = bankCardInfo?.cardType
             }
 
             override fun onFailure() {
@@ -34,9 +35,9 @@ class MainActivity : Activity() {
 
         verify.setOnClickListener {
             bankCardEditText2.verify(object : OnVerifyBankCardListener {
-                override fun onSuccess(cardBank: String?, cardType: String?) {
-                    bankName2.text = cardBank
-                    cardType2.text = cardType
+                override fun onSuccess(bankCardInfo: BankCardInfo?) {
+                    bankName2.text = bankCardInfo?.cardBank
+                    cardType2.text = bankCardInfo?.cardType
                 }
 
                 override fun onFailure() {
