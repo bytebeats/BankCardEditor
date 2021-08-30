@@ -14,20 +14,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a4ca2f0-4b78-4605-aa57-c78ffb2a5a4e" name="Changes" comment="check opening bank and card type.">
-      <change afterPath="$PROJECT_DIR$/media/bank_card_format.gif" afterDir="false" />
+    <list default="true" id="0a4ca2f0-4b78-4605-aa57-c78ffb2a5a4e" name="Changes" comment="update README.md">
+      <change afterPath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/OnVerifyBankCardListener.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/me/bytebeats/views/bankcard/app/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/me/bytebeats/views/bankcard/app/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/BankCardUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/BankCardUtil.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/FormatEditText.kt" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/BankCardEditText.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/FormatTextWatcher.kt" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/me/bytebeats/views/bankcard/BankCardTextWatcher.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/res/values/attrs_format_edit_text.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/res/values/attrs_bank_card_edit_text.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@/Users/tiger/.android/avd/Pixel_4a_API_30.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@NAB0220416028317]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -39,6 +40,7 @@
         <option value="Kotlin Enum" />
         <option value="Kotlin Object" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Interface" />
       </list>
     </option>
   </component>
@@ -56,7 +58,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android-custom-view/Users/tiger/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.3.1/45a346a05e7ff27a01c59452379c5939cbb53c03/appcompat-1.3.1-sources.jar!/androidx/appcompat/widget/AppCompatEditText.java_SELECTED" value="AppCompatEditText" />
-    <property name="android-custom-view/Users/tiger/Development/Workspace/IntelliJIDEA/BankCardEditor/library/src/main/java/me/bytebeats/views/bankcard/FormatEditText.kt_SELECTED" value="FormatEditText" />
+    <property name="android-custom-view/Users/tiger/Development/Workspace/IntelliJIDEA/BankCardEditor/library/src/main/java/me/bytebeats/views/bankcard/FormatEditText.kt_SELECTED" value="BankCardEditText" />
     <property name="android-custom-view/Users/tiger/Development/Workspace/IntelliJIDEA/CardNumFormatEditText/library/src/main/java/me/bytebeats/views/backcard/CardNumFormatEditText.java_SELECTED" value="CardNumFormatEditText" />
     <property name="android-custom-view/Users/tiger/Development/Workspace/IntelliJIDEA/CardNumFormatEditText/library/src/main/java/me/pc/edittext/numformat/library/CardNumFormatEditText.java_SELECTED" value="CardNumFormatEditText" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
@@ -67,6 +69,11 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/media" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
@@ -178,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630069868851</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update README.md">
+      <created>1630071266952</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1630071266952</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -199,6 +213,7 @@
     <MESSAGE value="text." />
     <MESSAGE value="FormatEditText works like charming." />
     <MESSAGE value="check opening bank and card type." />
-    <option name="LAST_COMMIT_MESSAGE" value="check opening bank and card type." />
+    <MESSAGE value="update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="update README.md" />
   </component>
 </project>

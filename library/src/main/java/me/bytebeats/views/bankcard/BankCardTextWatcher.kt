@@ -6,16 +6,15 @@ import android.text.Editable
 import android.text.Selection
 import android.text.InputFilter
 import android.text.InputFilter.LengthFilter
-import android.util.Log
+import android.widget.EditText
 
 /**
  * @author bytebeats || happychinapc[at]gmail[dot]com
  * @date 2015/3/25
  * @time 16:36
  */
-class FormatTextWatcher(private val mEditor: FormatEditText) : TextWatcher {
-    //set anything you want, ' ', '-'...
-    var splitter = Splitter.WHITESPACE
+class BankCardTextWatcher(private val mEditor: EditText, var splitter: Splitter = Splitter.WHITESPACE) :
+        TextWatcher {
     private var prevTextLength = 0
     private var curTextLength = 0
     private var isChanged = false
@@ -23,9 +22,7 @@ class FormatTextWatcher(private val mEditor: FormatEditText) : TextWatcher {
     private var tmpCharArray: CharArray? = null
     private val buffer = StringBuffer()
     private var splitterCounter = 0
-    private val onBankCardVerifyListener
-        get() = mEditor.onVerifyBankCardListener
-
+    var onBankCardVerifyListener: OnVerifyBankCardListener? = null
 
     init {
         mEditor.filters = arrayOf<InputFilter>(LengthFilter(LIMIT_OF_INPUT_LENGTH))
@@ -89,20 +86,30 @@ class FormatTextWatcher(private val mEditor: FormatEditText) : TextWatcher {
             val editable = mEditor.text
             Selection.setSelection(editable, cursor)
             isChanged = false
-            val trimmedBankCardNo = mEditor.trimmedBankCardNo()
-            if (onBankCardVerifyListener != null && verifyBankCard(trimmedBankCardNo)) {
-                Log.i(TAG, "verified")
-                val bankCardInfo = BankCardInfo(trimmedBankCardNo!!)
-                onBankCardVerifyListener?.onVerified(bankCardInfo.cardBank, bankCardInfo.cardType)
+            val trimmedBankCardNo = if (mEditor is BankCardEditText) {
+                trimmedBankCardNo(mEditor)
             } else {
-                Log.i(TAG, "unverified")
-                onBankCardVerifyListener?.onVerified(null, null)
+                trimmedBankCardNo(mEditor, splitter)
+            }
+            if (onBankCardVerifyListener != null && verifyBankCard(trimmedBankCardNo)) {
+                val bankCardInfo = BankCardInfo(trimmedBankCardNo!!)
+                onBankCardVerifyListener?.onSuccess(bankCardInfo.cardBank, bankCardInfo.cardType)
+            } else {
+                onBankCardVerifyListener?.onFailure()
             }
         }
     }
 
     companion object {
         private const val LIMIT_OF_INPUT_LENGTH = 23
-        private const val TAG = "FormatTextWatcher"
+        private const val TAG = "BankCardTextWatcher"
+
+        fun trimmedBankCardNo(editor: BankCardEditText): String? {
+            return editor.text?.replace(Regex(editor.splitter.splitter.toString()), "")
+        }
+
+        fun trimmedBankCardNo(editor: EditText, splitter: Splitter): String? {
+            return editor.text?.replace(Regex(splitter.splitter.toString()), "")
+        }
     }
 }

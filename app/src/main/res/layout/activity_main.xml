@@ -23,7 +23,7 @@
             android:text="Card No1:"
             android:layout_height="wrap_content" />
 
-        <me.bytebeats.views.bankcard.FormatEditText
+        <me.bytebeats.views.bankcard.BankCardEditText
             android:paddingStart="10dp"
             app:splitter="pound"
             android:inputType="number"
@@ -96,7 +96,7 @@
             android:layout_height="wrap_content" />
 
 
-        <me.bytebeats.views.bankcard.FormatEditText
+        <me.bytebeats.views.bankcard.BankCardEditText
             app:splitter="hyphen"
             android:paddingStart="10dp"
             android:inputType="number"
