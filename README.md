@@ -6,7 +6,7 @@ Split a band card number or a credit card number by whitespace/pound/hyphen ever
 Effect Graph
 -------
 
-<img src="/media/bank_card_format.gif" width="360" height="720"/>
+<img src="/media/bank_card_format.gif" width="360" height="800"/>
 
 How to use
 -------
